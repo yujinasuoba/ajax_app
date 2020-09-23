@@ -1,11 +1,14 @@
 function check() {
+  // 表示されている全てのメモを取得している
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
      if (post.getAttribute("data-load") != null) {
       return null;
     }
     post.setAttribute("data-load", "true");
+    // メモをクリクックした場合に実行する処理を定義している
     post.addEventListener("click", () => {
+      // どのメモをクリックしたのか、カスタムデータを利用して取得している
       const postId = post.getAttribute("data-id");
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `/posts/${postId}`, true);
