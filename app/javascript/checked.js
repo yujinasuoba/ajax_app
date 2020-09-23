@@ -1,8 +1,8 @@
 function check() {
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
-      if (post.getAttribute("data-load") != null) {
-        return null;
+     if (post.getAttribute("data-load") != null) {
+      return null;
     }
     post.setAttribute("data-load", "true");
     post.addEventListener("click", () => {
